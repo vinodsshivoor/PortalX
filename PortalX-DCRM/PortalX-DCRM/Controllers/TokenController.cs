@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Web;
 using System.Web.Http;
+
+
 
 namespace PortalX_DCRM.Controllers
 {
@@ -18,6 +21,7 @@ namespace PortalX_DCRM.Controllers
         [HttpPost] // There are HttpGet, HttpPost, HttpPut, HttpDelete.
         public string ChangePassword()
         {
+            string userinfo = Common.GetClaimInfo("Username");
             return "Changesd";
         }
 
@@ -27,5 +31,10 @@ namespace PortalX_DCRM.Controllers
         {
             return "genToken";
         }
+
+
+        
+
+
     }
 }
