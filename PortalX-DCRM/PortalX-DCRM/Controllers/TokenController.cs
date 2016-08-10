@@ -21,7 +21,7 @@ namespace PortalX_DCRM.Controllers
         [HttpPost] // There are HttpGet, HttpPost, HttpPut, HttpDelete.
         public string ChangePassword()
         {
-            string userinfo = Common.GetClaimInfo("Username");
+            string userinfo = Common.getClaimInfo("Username");
             return "Changesd";
         }
 

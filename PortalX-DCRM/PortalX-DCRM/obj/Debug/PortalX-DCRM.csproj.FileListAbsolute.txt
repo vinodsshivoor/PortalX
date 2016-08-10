@@ -54,3 +54,4 @@ D:\Projects\Dynamics\XrmPortal\PortalX\PortalX-DCRM\PortalX-DCRM\bin\System.Web.
 D:\Projects\Dynamics\XrmPortal\PortalX\PortalX-DCRM\PortalX-DCRM\bin\Antlr3.Runtime.pdb
 D:\Projects\Dynamics\XrmPortal\PortalX\PortalX-DCRM\PortalX-DCRM\obj\Debug\PortalX-DCRM.dll
 D:\Projects\Dynamics\XrmPortal\PortalX\PortalX-DCRM\PortalX-DCRM\obj\Debug\PortalX-DCRM.pdb
+D:\Projects\Dynamics\XrmPortal\PortalX\PortalX-DCRM\PortalX-DCRM\obj\Debug\PortalX-DCRM.csprojResolveAssemblyReference.cache

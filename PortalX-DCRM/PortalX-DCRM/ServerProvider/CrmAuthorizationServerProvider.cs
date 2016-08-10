@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using PortalX_DCRM.Models;
 
 namespace PortalX_DCRM
 {
@@ -32,11 +33,22 @@ namespace PortalX_DCRM
             //    }
             //}
 
-            var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-            identity.AddClaim(new Claim("Username", context.UserName));
-            identity.AddClaim(new Claim("role", "user"));
+            User getUserInfo = AskCRM.FindUser(context.UserName, context.Password);
+            if (getUserInfo.isValid)
+            {
 
-            context.Validated(identity);
+                var identity = new ClaimsIdentity(context.Options.AuthenticationType);
+                identity.AddClaim(new Claim("Username", context.UserName));
+                identity.AddClaim(new Claim("role", "user"));
+
+                context.Validated(identity);
+            }
+            else
+            {
+                context.SetError("invalid_grant", "The user name or password is incorrect.");
+                return;
+            }
+
 
         }
     }
