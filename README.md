@@ -11,7 +11,9 @@ PortalX For Dynamics CRM
 API Info 
 
 Get Access Token method : /AccessToken
+
 Parameter in headers       
+
 1. Accept  : application/json
 2. Content-Type : application/x-www-form-urlencoded
 3. grant_type   : password
