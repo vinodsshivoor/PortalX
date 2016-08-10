@@ -5,8 +5,6 @@ using System.Security.Claims;
 using System.Web;
 using System.Web.Http;
 
-
-
 namespace PortalX_DCRM.Controllers
 {
     public class TokenController : ApiController
