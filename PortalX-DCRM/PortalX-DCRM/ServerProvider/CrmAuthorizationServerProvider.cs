@@ -22,23 +22,13 @@ namespace PortalX_DCRM
 
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
-            //using (AuthRepository _repo = new AuthRepository())
-            //{
-            //    IdentityUser user = await _repo.FindUser(context.UserName, context.Password);
-
-            //    if (user == null)
-            //    {
-            //        context.SetError("invalid_grant", "The user name or password is incorrect.");
-            //        return;
-            //    }
-            //}
-
             User getUserInfo = AskCRM.FindUser(context.UserName, context.Password);
             if (getUserInfo.isValid)
             {
 
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
                 identity.AddClaim(new Claim("Username", context.UserName));
+                identity.AddClaim(new Claim("Guid", getUserInfo.Id.ToString()));
                 identity.AddClaim(new Claim("role", "user"));
 
                 context.Validated(identity);
